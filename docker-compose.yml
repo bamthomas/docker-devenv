@@ -1,0 +1,14 @@
+version: '2'
+services:
+    dev:
+        image: java_dev
+        hostname: dev
+        volumes: 
+          - ${MY_HOME}:/home/dev
+          - /tmp/.X11-unix:/tmp/.X11-unix:rw
+          - /usr/bin/docker:/bin/docker:rw
+          - /var/run/docker.sock:/run/docker.sock:rw
+          - ${SSH_AUTH_SOCK}:/ssh-agent
+        environment:
+          - DISPLAY=${DISPLAY}
+          - SSH_AUTH_SOCK=/ssh-agent
