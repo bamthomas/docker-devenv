@@ -1,7 +1,7 @@
 version: '2'
 services:
     dev:
-        image: java_dev
+        image: "${MY_IMAGE}"
         hostname: dev
         volumes: 
           - ${MY_HOME}:/home/dev
